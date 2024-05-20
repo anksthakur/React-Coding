@@ -1,7 +1,9 @@
 
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
-//import Usecallback from './Usecallback';
+//import Propdrilling from './Propdrilling';
+//import UseReducer from './UseReducer';
+import Usecallback from './Usecallback';
 //import Usememo from './Usememo';
 //import Useref from './Useref';
 //import Returninuseeffect from './Returninuseeffect';
@@ -20,10 +22,10 @@ import './App.css';
 function App() {
   //useCallback
 
-// const [name,setName]=useState("Anup")
-// const changeName = ()=>{
-//   return "Thakur"
-// }
+const [name,setName]=useState("Anup")
+const changeName = ()=>{
+  return "Thakur"
+}
 
   // useEffect
   //  const [count,setCount] = useState(1);
@@ -59,7 +61,9 @@ function App() {
        {/* <Returninuseeffect/> */}
        {/* <Useref/> */}
        {/* <Usememo/> */}
-       {/* <Usecallback name="Anks" changeName={changeName}/> */}
+       <Usecallback name="Anks" changeName={changeName}/>
+       {/* <UseReducer/> */}
+       {/* <Propdrilling/> */}
     </div>
   );
 }
