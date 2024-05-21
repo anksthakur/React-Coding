@@ -1,7 +1,10 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import Memo from './Memo';
+import Highordercomp from './Highordercomp';
+//import MyPureComponent from './PureComponent';
+//import Ref from './Ref';
+// import Memo from './Memo';
 //import ChildA from './ChildA';
 //import UseReducer from './UseReducer';
 //import Usecallback from './Usecallback';
@@ -25,8 +28,8 @@ import Memo from './Memo';
 
 function App() {
   //Memo
-const [count,setCount]=useState(0);
-const [data,setData]=useState(10);
+// const [count,setCount]=useState(0);
+// const [data,setData]=useState(10);
   //useCallback
 
 // const [name,setName]=useState("Anup")
@@ -52,7 +55,7 @@ const [data,setData]=useState(10);
 
   return (
     <div className="App">
-      <h1>Home Page {count}</h1>
+      {/* <h1>Home Page {count}</h1> */}
       {/* <Clas/>
       <Apple/> */}
       {/* prop pass kiya FunComp se */}
@@ -83,8 +86,14 @@ const [data,setData]=useState(10);
       </data1.Provider>
       </data.Provider> */}
       {/* Memo */}
-      <Memo data={data}/>
-      <button onClick={()=>setCount(count+1)}>Count</button>
+      {/* <Memo data={data}/>
+      <button onClick={()=>setCount(count+1)}>Count</button> */}
+      {/* use of REF */}
+      {/* <Ref/> */}
+      {/* Pure Component */}
+      {/* <MyPureComponent/> */}
+    {/* high order component */}
+    <Highordercomp/>
     </div>
   );
 }
