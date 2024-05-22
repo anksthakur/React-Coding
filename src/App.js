@@ -1,7 +1,21 @@
 
 import React from 'react';
 import './App.css';
-import Highordercomp from './Highordercomp';
+import Home from './components/ReactRouter';
+import About from './components/About';
+import Student from './components/Student';
+import {BrowserRouter as  Router, Route, Routes, Navigate,  } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import SearchParamsHook from './components/SearchParamsHook';
+import ContactUs from './components/ContactUs';
+import Company from './components/Company';
+import Channel from './components/Channel';
+import Other from './components/Other';
+import Login from './components/Login';
+import Protected from './components/Protected';
+//import Page404 from './components/Page404';
+
+//import Highordercomp from './Highordercomp';
 //import MyPureComponent from './PureComponent';
 //import Ref from './Ref';
 // import Memo from './Memo';
@@ -22,6 +36,7 @@ import Highordercomp from './Highordercomp';
 // import Eg from './Eg';
 // import FunComp from './FunComp';
 
+// createContext
 // export const data = createContext();
 // export const data1 = createContext();
 
@@ -46,9 +61,12 @@ function App() {
   //     <div>component ke andar component</div>
   //   )
   // }
+
   // state ko use kr rhe hai render method ke ley
 //const [name,setName] = useState("Anup")
+
 // prop drilling
+
 //useContext
 // const name = "Anup Thakur";
 // const gender = "Male";
@@ -80,6 +98,8 @@ function App() {
        {/* <Usecallback name="Anks" changeName={changeName}/> */}
        {/* <UseReducer/> */}
 {/* Props drilling */}
+
+{/* context */}
       {/* <data.Provider value={name}>
         <data1.Provider value={gender}>
       <ChildA/>
@@ -93,7 +113,37 @@ function App() {
       {/* Pure Component */}
       {/* <MyPureComponent/> */}
     {/* high order component */}
-    <Highordercomp/>
+    {/* <Highordercomp/> */}
+
+    {/* Routing */}
+    <Router>
+    <Navbar/>
+      <Routes>
+        {/* path define kiya aur element m ki load krna kya hai */}
+   <Route path='/' element={<Protected Component={Home}/>}/>
+   <Route path='/about' element={<Protected Component={About}/>}/>
+   <Route path='/student' element={<Protected Component={Student}/>}/>
+   {/* Protected Route */}
+   <Route path='/login' element={<Login/>}/>
+   {/* Nested routing */}
+   <Route path='/contactus' element={<ContactUs/>}>
+    <Route path='company' element={<Company/>}/>
+    <Route path='channel' element={<Channel/>}/>
+    <Route path='other' element={<Other/>}/>
+    </Route>
+   {/* params */}
+   <Route path='/student/:name' element={<Student/>}/>
+   {/* useSearchParams */}
+   <Route path='/searchParamshook' element={<SearchParamsHook/>}/>
+   {/* path="/*" means ki agar upar wala koi url match nhi huya to automatic run ho jayega*/}
+   {/* if URL not match with exact path then it will go to the 404 Page */}
+   {/* <Route path="/*" element={<Page404/>}/> */}
+
+   {/* jab user galti se galat URL daal de to uhsko navigate kr de doosre page pe*/}
+   {/* Navigate */}
+   <Route path='/*' element={<Navigate to="/"/>}/>
+   </Routes>
+    </Router>
     </div>
   );
 }
