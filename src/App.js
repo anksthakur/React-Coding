@@ -1,18 +1,20 @@
-
 import React from 'react';
 import './App.css';
-import Home from './components/ReactRouter';
-import About from './components/About';
-import Student from './components/Student';
-import {BrowserRouter as  Router, Route, Routes, Navigate,  } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import SearchParamsHook from './components/SearchParamsHook';
-import ContactUs from './components/ContactUs';
-import Company from './components/Company';
-import Channel from './components/Channel';
-import Other from './components/Other';
-import Login from './components/Login';
-import Protected from './components/Protected';
+import Error from './components/Error';
+import ErrorBound from './components/ErrorBound';
+//import Lazy from './components/Lazy';
+// import Home from './components/ReactRouter';
+// import About from './components/About';
+// import Student from './components/Student';
+// import {BrowserRouter as  Router, Route, Routes, Navigate,  } from 'react-router-dom';
+// import Navbar from './components/Navbar';
+// import SearchParamsHook from './components/SearchParamsHook';
+// import ContactUs from './components/ContactUs';
+// import Company from './components/Company';
+// import Channel from './components/Channel';
+// import Other from './components/Other';
+// import Login from './components/Login';
+// import Protected from './components/Protected';
 //import Page404 from './components/Page404';
 
 //import Highordercomp from './Highordercomp';
@@ -40,6 +42,9 @@ import Protected from './components/Protected';
 // export const data = createContext();
 // export const data1 = createContext();
 
+// Lazy & suspense
+// const Lazy = lazy(() => import('./components/Lazy'));
+// const Lazy2 = lazy(()=>import('./components/Lazy2'));
 
 function App() {
   //Memo
@@ -116,37 +121,49 @@ function App() {
     {/* <Highordercomp/> */}
 
     {/* Routing */}
-    <Router>
+    {/* <Router>
     <Navbar/>
-      <Routes>
+      <Routes> */}
         {/* path define kiya aur element m ki load krna kya hai */}
-   <Route path='/' element={<Protected Component={Home}/>}/>
-   <Route path='/about' element={<Protected Component={About}/>}/>
-   <Route path='/student' element={<Protected Component={Student}/>}/>
+   {/* <Route path='/' element={<Protected Component={Home}/>}/> */}
+   {/* <Route path='/about' element={<Protected Component={About}/>}/> */}
+   {/* <Route path='/student' element={<Protected Component={Student}/>}/> */}
    {/* Protected Route */}
-   <Route path='/login' element={<Login/>}/>
+   {/* <Route path='/login' element={<Login/>}/> */}
    {/* Nested routing */}
-   <Route path='/contactus' element={<ContactUs/>}>
+   {/* <Route path='/contactus' element={<ContactUs/>}>
     <Route path='company' element={<Company/>}/>
     <Route path='channel' element={<Channel/>}/>
-    <Route path='other' element={<Other/>}/>
-    </Route>
+    <Route path='other' element={<Other/>}/> */}
+    {/* </Route> */}
    {/* params */}
-   <Route path='/student/:name' element={<Student/>}/>
+   {/* <Route path='/student/:name' element={<Student/>}/> */}
    {/* useSearchParams */}
-   <Route path='/searchParamshook' element={<SearchParamsHook/>}/>
+   {/* <Route path='/searchParamshook' element={<SearchParamsHook/>}/> */}
    {/* path="/*" means ki agar upar wala koi url match nhi huya to automatic run ho jayega*/}
    {/* if URL not match with exact path then it will go to the 404 Page */}
    {/* <Route path="/*" element={<Page404/>}/> */}
 
    {/* jab user galti se galat URL daal de to uhsko navigate kr de doosre page pe*/}
    {/* Navigate */}
-   <Route path='/*' element={<Navigate to="/"/>}/>
-   </Routes>
-    </Router>
+   {/* <Route path='/*' element={<Navigate to="/"/>}/> */}
+   {/* </Routes>
+    </Router> */}
+
+    {/* Lazy loading */}
+    <h1>Home Component</h1>
+    {/* <Suspense fallback={<div>Please wait .....</div>}>
+    <Lazy/>
+    </Suspense>
+    <Suspense fallback={<div>Please wait for a second .....</div>}>
+    <Lazy2/>
+    </Suspense> */}
+
+    {/* Error Boundary */}
+    <ErrorBound>
+    <Error/>
+    </ErrorBound>
     </div>
   );
 }
-
-export  default App;
-
+export default App;
